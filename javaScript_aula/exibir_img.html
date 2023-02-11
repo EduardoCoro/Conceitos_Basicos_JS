@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Documento</title>
+ 
+    </head>
+    <body>
+        <div id="divcabecalho">
+              <h1>Página Dinâmica</h1>
+        </div>
+        
+        <div id="divcorpo">
+             <label id="lblnome">Coloque o Link da imagem : </label>
+             <br>
+             <input type="text" id="txtlink">
+             <br>
+             <label id="lbltel">Digite um comentário</label>
+             <br>
+             <input type="text" id="txt_coment">
+             <br><br>
+
+             <button type="button" id="btncadastro" onclick="inserirelemento()" onmouseout="alert()"> Inserir </button>
+        </div>
+
+        <div id="divrodape">
+            <p>Desenvolvido por: Eduhsonhad
+              <br> &copy; 2017  Pgteste.com
+            </p>
+        </div>
+ 
+    </body>
+
+    <script>
+        
+        let renderizavalores = (link,comentario) => {
+         
+        let vldivcorpo= document.getElementById('divcorpo');
+
+        let divItem= document.createElement('div');
+        vldivcorpo.appendChild(divItem);
+
+          let p_link = document.createElement('p');
+          p_link.innerHTML+=`<img src="${link}">`;
+          divItem.appendChild(p_link);
+
+          let ep= document.createElement('p');
+          ep.textContent= comentario;
+          divItem.appendChild(ep);
+
+        }
+        
+        
+        let inserirelemento = () => {
+          let valorlink =  document.getElementById('txtlink').value
+          let valorcoment =  document.getElementById('txt_coment').value
+
+          // chamei a div e declarei numa variavel
+         
+
+          renderizavalores(valorlink,valorcoment);
+        }
+
+        /*
+        window.onload = () => {
+               renderizavalores("Edu","4542452");
+        }
+        */
+    </script>
+</html>

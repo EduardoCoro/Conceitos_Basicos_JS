@@ -1,0 +1,209 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro</title>
+
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+
+    </head>
+    <body>
+        <div id="div_title" class="container">
+          <h1><center>Cadastro de Pessoas</center></h1>
+        </div>
+
+        <div id="div_corpo">
+             <label id="lblnome">Nome</label>
+             <br>
+             <input class="form-group" type="text" id="txtnome">
+             <br>
+             <label id="lbltel">Telefone</label>
+             <br>
+             <input type="text" id="txttel">
+             <br>
+             <label id="lblend">Endereço</label>
+             <br>
+             <input type="text" id="txtend">
+             <br>
+             <label id="lbl_cid">Cidade</label>
+             <br>
+             <input type="text" id="txt_cid">
+             <br>
+             <label id="lbluf">Uf</label>
+             <br>
+             <input type="text" id="txtuf">
+             <br><br>
+
+             <button class="btn btn-primary" type="button" id="btn_inst" onclick="getPessoaObject" >Inserir</button>
+             <br>
+        </div>
+        <div id="Conteudo">
+        </div>
+        
+        <div id="Rodape">
+        </div>
+    </body>
+
+    <script>
+
+    
+        
+     let divCorpo= document.getElementById('Conteudo');
+        
+        
+     let table = document.createElement('table');  
+     table.setAttribute('class', 'table')
+     divCorpo.appendChild(table);
+    
+     let thead = document.createElement('thead');
+    
+     table.appendChild(thead);
+
+     let tr = document.createElement('tr');
+     thead.appendChild(tr);
+
+     let th1 = document.createElement('th');
+     th1.textContent=" Nome ";
+     tr.appendChild(th1);
+    
+     let th2 = document.createElement('th');
+     th2.textContent=" Telefone ";
+     tr.appendChild(th2);
+
+     let th3 = document.createElement('th');
+     th3.textContent=" Endereço ";
+     tr.appendChild(th3);
+
+     let th4 = document.createElement('th');
+     th4.textContent=" Cidade ";
+     tr.appendChild(th4);
+
+     let th5 = document.createElement('th');
+     th5.textContent=" UF ";
+     tr.appendChild(th5);
+    
+     let th6 = document.createElement('th');
+     th6.textContent=" opçao ";
+     tr.appendChild(th6);
+
+     let tbody = document.createElement('tbody');
+     table.appendChild(tbody);
+
+    let Inseri_tabela_valores =(nome,tel,ende,cid,uf) => {    
+     
+      let linhatbody = document.createElement('tr');
+      tbody.appendChild(linhatbody);
+
+      let tdnome= document.createElement('td');
+      tdnome.textContent= nome;
+      linhatbody.appendChild(tdnome);
+
+      let tdtel= document.createElement('td');
+      tdtel.textContent= tel;
+      linhatbody.appendChild(tdtel);
+
+      let tdend= document.createElement('td');
+      tdend.textContent= ende;
+      linhatbody.appendChild(tdend);
+
+      let tdcid= document.createElement('td');
+      tdcid.textContent= cid;
+      linhatbody.appendChild(tdcid);
+
+      let tduf= document.createElement('td');
+      tduf.textContent= uf;
+      linhatbody.appendChild(tduf);
+
+      let tdopcao = document.createElement('td');
+      linhatbody.appendChild(tdopcao);
+
+      let btndeletar = document.createElement('button');
+      btndeletar.textContent="Deletar";
+      btndeletar.setAttribute('type','button');
+      btndeletar.setAttribute('class', 'btn btn-danger');
+      tdopcao.appendChild(btndeletar);
+       
+       // deletar
+        btndeletar.addEventListener('click' , (e) => {
+          e.currentTarget.parentNode.parentNode.remove();
+        })
+
+    }
+       
+    let inserir_cadastro = () => {
+               
+                let valornome=document.getElementById('txtnome').value;
+                let valortel=document.getElementById('txttel').value;
+                let valorend=document.getElementById('txtend').value;
+                let valorcid=document.getElementById('txt_cid').value;
+                let valoruf=document.getElementById('txtuf').value;
+
+                Inseri_tabela_valores(valornome,valortel,valorend,valorcid,valoruf);
+
+
+    }
+    
+  let getDadosAPI=()=> {  
+    let requisicao=new XMLHttpRequest();
+
+    let icone= document.createElement('i');
+    document.body.appendChild(icone);
+    icone.setAttribute('class','fa fa-spinner');
+    icone.id='iconeloading';
+
+    requisicao.open('get','http://localhost:300\clientes',true);
+
+    requisicao.onreadystatechange= () => {
+        if(requisicao.readyState ==4 && requisicao ==200)
+        {
+            let arrjson = JSON.parse(requisicao.responseText);
+
+            //limpar a info da  tabela
+            document.getElementById('corpoTblpessoas').innerHTML="";
+
+            arrjson.forEach( element => { 
+                Inseri_tabela_valores(element);
+            });
+                
+            document.getElementById('iconeloading').remove();
+        }
+    }
+    requisicao.Send();
+  }
+
+    
+    window.onload= () => {
+        getDadosAPI();
+    }
+    
+    let getPessoaObject = () => {
+        let clientes = {};
+
+        cliente(['nome']= document.getElementById('txtnome'.value));
+        //endereco
+        //uf
+
+
+        return clientes;
+
+    }
+    let salvarpessoa = () => {
+        let pessoa=getPessoaObject();
+
+        let requisicao = new XMLHttpRequest();
+        requisicao.open('post', 'http://localhost:3000/clientes',true);
+        requisicao.setRequestHeader('content-type','application/json');
+
+        requisicao.onreadystatechange=() => {
+            if(requisicao.readyState === 4 && requisicao.status === 200)
+            {
+                getDadosAPI();
+            }
+        }
+
+        requisicao.send(JSON.stringify(pessoa));
+    }
+
+
+    </script>
+
+</html>

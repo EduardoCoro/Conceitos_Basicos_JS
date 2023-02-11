@@ -1,0 +1,58 @@
+<html>
+
+    <head>
+         <meta charset="UTF-8">
+         <title>Título página</title>
+
+    </head>
+
+
+    <body>
+        <div>
+            <h1><center>" Bem vindo a página ! "</center></h1>
+        </div>
+
+        <div>
+            <p>
+               Parágrafo 1
+            </p>
+            <p>
+                P2
+            </p>
+            <p>
+                P3
+            </p>
+        </div>
+        
+        <div>
+            <h4>Desenvolvido por :
+            <br><br>    
+            Eduardo </h4>
+        </div>
+    </body>
+    
+    
+    <script >
+          
+           window.onload=(e) => 
+           {
+               console.log(e);
+               alert("Seja Bem Vindo!")
+           }
+        
+
+        // outros modos de exibir
+        let arr= ['manoloCris', 'João','Boba'];
+
+        for( let i=0 ; i < arr.length ; i++)
+        {
+            let p = document.createElement('p');
+            p.textContent='Nome : ' + arr[i];
+            document.body.appendChild(p);
+        }
+        
+
+    </script>
+
+
+</html>

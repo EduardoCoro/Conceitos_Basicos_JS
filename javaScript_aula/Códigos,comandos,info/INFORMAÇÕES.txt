@@ -1,0 +1,96 @@
+  'use strict'
+
+ let s = 'Zuchi';
+ let n =  1.55;
+ let b = true || false ;
+ let u = ; // undefined (nunca devemos atribuir para uma variável)
+ let nu = null ;
+
+ // Objeto em JavaScript
+
+ let obj = {
+  
+  nome: 'Cristian',
+  sobreNome: 'Paulista',
+  cidade: 'Jaboticabal',
+  UF: 'SP',
+  isActive: true,
+  
+}
+
+
+
+// metodos de chamar um vetor dentro do objeto
+console.log(pessoa['estado'])
+console.log(pessoa.estado)
+ 
+
+ let f = () => {
+   
+   console.log("Teste")
+
+}
+ 
+ let valor = u || 'texto';
+
+ console.log( typeof s )
+ console.log( typeof n )
+ console.log( typeof b )
+ console.log( typeof u )
+ console.log( typeof nu )
+ console.log( typeof f )
+ console.log( typeof cliente )
+ console.log( cliente.nome + '' + cliente.sobreNome );
+ console.log(valor);
+
+ // var --> JS vai jogar a declaração para cima. NÃO TEMOS ESCOPO
+ //     --> Exceção:   
+
+// arrow function 
+
+vetor.push(() => {console.log('teste1')}) // 8
+
+
+for (var i = 0; i < vetor.length; i++) {
+
+
+    let posicao = vetor[1]
+
+    if(typeof(posicao) === 'number')
+      vetor[9] = vetor[9] + posicao
+
+
+______________________________________________________________________________________________________________________________________________________________
+
+
+ // (==) ==> fazer a comp-aração somente do valor
+ // (===) ==>  faz a comparação entre o valor e o tipo de dado
+ // (!=)  ==> verificar se algo é diferente em valor 
+ // (!==) ==> verificar se algo é diferente em valor e tipo de dado 
+ 
+ let vetor = [] ; // vetor em javascript armazena de maneira heterogênia qualquer tipo de dados ao mesmo tempo
+ 
+ vetor.push(1.99); [0] <-- number
+ vetor.push('Cristian'); [1] <-- string
+ let xyz = false
+ vetor.push[xyz]
+
+ console.log(vetor[0])
+
+ //for(let i = 0 ; i < vetor.length ; i++){
+ 
+ //   console.log(vetor[i]);
+ // }
+
+ for(let valor of vetor){
+
+     console.log(valor);
+}
+
+
+
+
+
+
+
+

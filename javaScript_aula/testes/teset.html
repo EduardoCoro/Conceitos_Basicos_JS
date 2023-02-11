@@ -1,0 +1,86 @@
+
+<html>
+
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name = "viewport" content ="width=device-width, initial-scale=1.">
+      <meta http-equiv="X-UA-Compatible" content = "ie-edge">
+      <title> Função </title>
+    </head>   
+    <body>
+    
+    </body>
+    
+
+  <script>
+   
+  let divbody= document.createElement('div');
+
+   let lbl_nome = document.createElement('label');
+   lbl_nome.textContent = "Nome Completo:";
+
+   let nomeEsc = document.createElement('input');
+
+   let lbl_tel = document.createElement('label');
+   lbl_tel.textContent = "Telefone:";
+
+   let telefoneEsc = document.createElement('input');
+
+   let btn1 = document.createElement('button');
+   btn1.textContent = " ' Cadastrar ' ";
+
+   document.body.appendChild(nome);
+   document.body.appendChild(document.createElement('br'));
+   document.body.appendChild(nomeEsc);
+   document.body.appendChild(document.createElement('br'));
+   document.body.appendChild(lbl_tel);
+   document.body.appendChild(document.createElement('br'));
+   document.body.appendChild(telefoneEsc);
+   document.body.appendChild(document.createElement('br'));
+   document.body.appendChild(btn1);
+   document.body.appendChild(document.createElement('br'));
+   document.body.appendChild(document.createElement('br'));
+   document.body.appendChild(document.createElement('br'));
+  
+
+    var divFooter = document.createElement('div');
+    document.body.appendChild(divFooter);
+    
+    
+    btn1.addEventListener('click', (e) => {
+    console.log(nomeEsc.value);
+    console.log(telefoneEsc.value);
+    });
+  
+    
+   
+    divFooter.innerHTML += `<table>
+    
+    <thead>
+      <tr>
+         <td><h4>Nome Completo</h4></td>
+         <td><h4>Telefone</h4></td>
+      </tr>
+    
+    </thead>
+    
+    <tbody>
+      <tr>
+       <td>Oswaldinho Doc</td>
+       <td>16995555555</td>
+       </tr>
+
+       <tr>
+       <td></td>
+       <td></td>
+       </tr>
+    
+       </tbody> 
+    
+       </table>
+
+ `;
+
+  </script>
+
+  </html>

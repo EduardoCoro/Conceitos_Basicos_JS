@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <title>Documento</title>
+ 
+    </head>
+    <body>
+        <div id="divcabecalho">
+              <h1>Título da pagina</h1>
+        </div>
+        
+        <div id="divcorpo">
+             <label id="lblnome">Nome</label>
+             <br>
+             <input type="text" id="txtnome">
+             <br>
+             <label id="lbltel">Telefone</label>
+             <br>
+             <input type="text" id="txttel">
+             <br><br>
+
+             <button type="button" id="btncadastro" onclick="inserirelemento()" onmouseout="alert()"> Inserir </button>
+        </div>
+
+        <div id="divrodape">
+            <p>Desenvolvido por: Eduhsonhad
+              <br> &copy; 2017  Pgteste.com
+            </p>
+        </div>
+ 
+    </body>
+
+    <script>
+        
+        let renderizavalores = (nome,telefone) => {
+         
+          let vldivcorpo= document.getElementById('divcorpo');
+         let divItem= document.createElement('div');
+          vldivcorpo.appendChild(divItem);
+
+          let eh4 = document.createElement('h4');
+          eh4.textContent= nome;
+          divItem.appendChild(eh4);
+
+          let ep= document.createElement('p');
+          ep.textContent= telefone;
+          divItem.appendChild(ep);
+
+        }
+        
+        
+        let inserirelemento = () => {
+          let valornome =  document.getElementById('txtnome').value
+          let valortel =  document.getElementById('txttel').value
+
+          // chamei a div e declarei numa variavel
+         let vldivcorpo= document.getElementById('divcorpo');
+
+          renderizavalores(valornome,valortel);
+        }
+
+        window.onload = () => {
+               renderizavalores("Edu","4542452");
+        }
+
+    </script>
+</html>

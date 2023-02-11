@@ -1,0 +1,115 @@
+'use strict'
+
+
+// EstruturaS CONDICIONAIS 
+
+
+let idade=18;
+
+
+// simples
+
+
+if(idade>=18)
+{
+
+}
+
+
+// Composta
+
+if ( idade>=18 )
+{
+     console.log(' Maior de idade');
+}
+else
+{
+     console.log(' Menor de idade');
+}
+
+
+----------------------------------------------------------------
+// outras formas - teste de igual
+
+ 
+let idade=18;
+
+
+if(idade ==18)
+{
+   verdade
+}
+
+
+if(+ idade =='18')  /// (+) muda o tipo da var  
+{  
+   v
+}
+
+if(idade === '18')
+{
+   f
+}
+
+
+-------------------------------------------------------------------
+// repetição
+
+
+while(condição)  // enquanto
+{
+
+}
+
+
+do                // faça enquanto
+{
+
+}while(condição);
+
+
+
+for(variavel; condição ; incremento da variavel)   // para - repetiçao
+{
+
+}
+
+exemplo for:
+
+for(let index = 0 ; condition ; index++)
+{
+
+}
+
+---------------------------------------------------------------
+// Vetor
+
+
+let vetor[];
+
+
+
+vetor.push(1.99); // [0] ->  number
+vetor.push('teste'); // [1]  -> string
+
+let xyz = false ; 
+vetor.push(xyz);
+
+
+for(let i = 0 ; i < vetor.length ; i++ )
+{
+     console.log(vetor[i]);
+}
+
+
+// outra forma ///
+
+
+for(let valor of vetor)
+{
+    console.log(valor);
+}
+
+
+
+

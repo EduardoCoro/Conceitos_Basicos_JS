@@ -1,0 +1,80 @@
+<html>
+
+    <head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+      <meta name = "viewport" content ="width=device-width, initial-scale=1.">
+      <meta http-equiv="X-UA-Compatible" content = "ie-edge">
+      <title> Lista de Sites </title>
+    </head>   
+    <body>
+    
+    </body>
+    
+
+     <script>
+
+   //Cabeçalho
+
+       let divHeader = document.createElement('div');
+         document.body.appendChild(divHeader);
+        // divHeader.innerHTML = "<h1> Titulo do Site </h1>"
+
+        let h1Titulo = document.createElement('h1');
+        h1Titulo.textContent = "Titulo do Site";  
+      divHeader.appendChild(h1Titulo)
+
+      let divConteudo = document.createElement('div')
+      document.body.appendChild(divConteudo);
+
+
+
+    let sites = [];
+    sites.push({
+       titulo: 'Fatec Dev Day',
+       endereco: 'http://fatecdevday.com.br'
+    });
+    
+  
+    sites.push({
+       titulo: 'Fatec TQ',
+       endereco: 'http://fatec.edu.br'
+    });
+    
+    sites.push({
+       titulo: 'Uol',
+       endereco: 'http://uol.com.br'
+    });   
+
+
+   let table = document.createElement('table');
+   divConteudo.appendChild(table);
+   
+
+   table.innerHTML = `
+
+   
+     <thead>
+        <tr>
+           <th>Titulo do Site</th>
+           <th>Acesse</th>
+        </tr>
+    </thead>
+  `;
+
+
+
+
+  for(let i = 0 ; 1 < sites.length ; i++){
+      table.innerHTML +=`
+        <tr>
+            <td>${sites[i].titulo}</td>
+            <td><a href='${sites[i].endereco}'>${sites[i].titulo}</a></td>
+
+        </tr> 
+    `;
+
+  }
+  
+  </script>
+
+  </html>

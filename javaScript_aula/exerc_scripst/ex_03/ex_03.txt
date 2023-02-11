@@ -1,0 +1,10 @@
+'use strict'
+
+for(i=0; i<=10,i++)
+{
+    let tab=[11];
+
+    tab[i]= 2 * 1;
+
+    console.log(' 2 x '+ i + ' = ' + tab[i]); 
+}

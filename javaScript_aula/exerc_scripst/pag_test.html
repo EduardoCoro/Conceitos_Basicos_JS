@@ -1,0 +1,72 @@
+<html>
+        
+            <head>
+                 <meta charset="UTF-8">
+                 <title>Título página</title>
+        
+            </head>
+        
+        
+            <body>
+      
+            </body>
+            
+            
+            <script >
+                
+                // Declaração de variáveis (Header, Body , rodape)
+                var divHeader= document.createElement('div');
+                var h1Header = document.createElement('h1');
+                var divBody=document.createElement('div');
+                var p1body=document.createElement('p');
+                var p2body=document.createElement('p');
+                var p3body=document.createElement('p');
+                var div_rodape=document.createElement('div');
+                var h4_name=document.createElement('h4');
+
+                
+                // Propriedade de inserimento de texto
+                h1Header.textContent=" Seja Bem vindo !";
+                p1body.textContent="Paragrafo 1 ";
+                p2body.textContent="Paragrafo 2 ";
+                p3body.textContent="Paragrafo 3 ";
+                h4_name.textContent="Desenvolvido por : Eduardo";
+
+                // Declarando os filhos, bojeto principal tem filho  ()
+                divHeader.appendChild(h1Header);
+
+                divBody.appendChild(p1body); 
+                divBody.appendChild(p2body); 
+                divBody.appendChild(p3body); 
+
+                
+                div_rodape.appendChild(h4_name);
+                div_rodape.innerHTML+=`<p>Fala garotooo</p>`
+
+                // Inserindo no Body (header, body, rodape)
+                document.body.appendChild(divHeader);
+                document.body.appendChild(divBody);
+                document.body.appendChild(div_rodape);
+                
+                let arr= {
+                    nome: "eduardo",
+                    tel: "32451522",
+                    animais:['nico','boba'],
+
+
+                };
+                
+
+                for(let i=0; i< arr.animais.length ; i++)
+                {
+                    let p2 =document.createElement('p');
+                        p2.textContent= ' ' + arr.animais[i];
+                        divBody.appendChild(p2);
+                }
+                
+                
+                
+            </script>
+        
+        
+        </html>

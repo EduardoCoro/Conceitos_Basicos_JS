@@ -1,0 +1,85 @@
+
+<html>
+
+ <title>Lista de Sites</title>
+
+</head>
+
+
+   <body>
+
+   </body>
+
+   <script>
+      let divHeader = document.createElement('div')
+      document.body.appendChild(divHeader);
+      divHead.innerHTML = "<h1>Titulo do Site</h1>"
+      let hiTitulo = document.createElement('h1')
+      h1Titulo.textContent = "Titulo do Site";  
+      divHeader.appendChild(h1Titulo)
+
+      let divConteudo = document.createElement('div')
+      document.body.appendChild(divConteudo);
+
+
+
+    let sites = [];
+    sites.push({
+       titulo: 'Fatec Dev Day',
+       endereco: 'http//:fatecdevday.com.br'
+    });
+    
+    let sites = [];
+    sites.push({
+       titulo: 'Fatec TQ',
+       endereco: 'http//:fatec.edu.br'
+    });
+    
+    let sites = [];
+    sites.push({
+       titulo: 'Uol',
+       endereco: 'http//:uol.com.br'
+    });   
+
+
+   let table = document.createElement('table');
+   divConteudo.appendChild(table);
+   
+
+   table.innerHTML += `
+
+   <table>
+     <thead>
+        <tr>
+           <th>Titulo do Sit</th>
+           <th>Acesse</th>
+        </tr>
+    <thead>
+   <body>
+  `;
+
+
+
+
+  for(let i = 0 ; 1 < sites.length ; i++);
+      table.innerHTML +=`
+        <tr>
+            <td>${site[i].titulo}</td>
+            <td><a href='${site[i].endereco}'>'${site[i].titulo}'</a>
+
+        </tr>
+    `
+
+  }
+
+
+
+  table.innerHTML += `
+     </table>
+   `;
+  
+
+  </script>
+
+
+  </html>

@@ -1,0 +1,119 @@
+<html>
+    
+        <head>
+             <meta charset="UTF-8">
+             <title>Título página</title>
+    
+        </head>
+    
+    
+        <body>
+  
+        </body>
+        
+        
+        <script >
+            
+            let divHeader = document.createElement('div');
+            document.body.appendChild(divHeader);
+
+            let h1t= document.createElement('h1');
+            h1t.textContent=" Seja  bem Vindo! ";
+            divHeader.appendChild(h1t);
+            divHeader.appendChild(document.createElement('br'));
+
+            let lbl_nome= document.createElement('label');
+            lbl_nome.textContent="Nome do Site";
+            divHeader.appendChild(lbl_nome);
+            divHeader.appendChild(document.createElement('br'));
+
+            let insert_nome = document.createElement('input');
+            divHeader.appendChild(insert_nome);
+            divHeader.appendChild(document.createElement('br'));
+
+            let lbl_end= document.createElement('label');
+            lbl_end.textContent="Digita o endereço : (obs: www.end.com) ";
+            divHeader.appendChild(lbl_end);
+            divHeader.appendChild(document.createElement('br'));
+            
+            let insert_end = document.createElement('input');
+            divHeader.appendChild(insert_end);
+            divHeader.appendChild(document.createElement('br'));
+
+            let btn_site = document.createElement('button');
+            btn_site.textContent="OK";
+            divHeader.appendChild(btn_site);
+            
+
+            let divbody = document.createElement('div');
+            document.body.appendChild(divbody);
+
+            let table= document.createElement('table');
+            divbody.appendChild(table);
+
+            let thead = document.createElement('thead');
+            table.appendChild(thead);
+
+            let trh = document.createElement('tr');
+            thead.appendChild(trh);
+
+            let th1=document.createElement('th');
+            th1.textContent="Nome do Site";
+            trh.appendChild(th1);
+
+            let th2=document.createElement('th');
+            th2.textContent="Endereço";
+            trh.appendChild(th2);
+
+            let th3=document.createElement('th');
+            th3.textContent="Opção";
+            trh.appendChild(th3);
+
+            let tbody= document.createElement('tbody');
+            table.appendChild(tbody);
+
+
+            btn_site.addEventListener('click', (e) => {
+
+             let trb = document.createElement('tr');
+             tbody.appendChild(trb);
+
+             let tdnome = document.createElement('td');
+             tdnome.textContent= insert_nome.value;
+             trb.appendChild(tdnome);
+
+             let tdend = document.createElement('td');
+             tdend.innerHTML+=`<a href="htpp:\\${insert_end.value}"> ${insert_end.value} <\a>   `;
+             trb.appendChild(tdend);
+
+             let tdopc = document.createElement('td');
+             trb.appendChild(tdopc);
+
+             let btndeletar = document.createElement('button');
+             btndeletar.textContent="Deletar";
+             tdopc.appendChild(btndeletar);
+
+             btndeletar.addEventListener('click' , (e) => {
+               e.currentTarget.parentNode.parentNode.remove();
+             })
+
+
+
+            } )
+
+            
+
+/*
+            var arrayLink =[];
+            var link=document.createElement('a');
+
+            link.innerHTML+=`<a href="www.uol.com.br"> UOL Brasil </a>`
+            
+            arrayLink=['Título: Site Uol',link];
+            
+            */
+            
+        </script>       
+    
+    
+    </html>
